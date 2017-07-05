@@ -1,4 +1,3 @@
-
 package minesweeper.server;
 
 import java.io.*;

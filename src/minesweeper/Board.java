@@ -1,4 +1,3 @@
-
 package minesweeper;
 
 import java.io.BufferedReader;
