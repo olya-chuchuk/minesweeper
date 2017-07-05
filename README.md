@@ -23,11 +23,14 @@ Firstly, run the server
  
  By default the web server uses port 4444.
  
- Now, using your PuTTY client, you can connect to the server and play a game.
+ Now, using your PuTTY client, you can connect to the server and play a game. 
+ 
  In your PuTTY client set next settings:
- "Host Name (or IP address)" - "localhost"
- "Port" - 4444
- "Connection type" - "Telnet"
+
+  * "Host Name (or IP address)" - "localhost"
+  * "Port" - 4444
+  * "Connection type" - "Telnet"
+  
  Push "Open" button and follow the intstuction. Enjoy your game!
 
 ## Documentation
