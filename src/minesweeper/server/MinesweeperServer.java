@@ -246,7 +246,6 @@ public class MinesweeperServer {
      * @param args arguments as described
      */
     public static void main(String[] args) {
-        // Command-line argument parsing is provided. Do not change this method.
         boolean debug = false;
         int port = DEFAULT_PORT;
         int sizeX = DEFAULT_SIZE;
