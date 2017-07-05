@@ -1,6 +1,6 @@
 # Initializing the board based on command-line options
 
-The server to is able to accept some command-line options.
+The server is able to accept some command-line options.
 
 ## Usage
 
