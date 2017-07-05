@@ -1,9 +1,6 @@
 # Minesweeper
-Client-server multiplayer variant of the classic computer game “Minesweeper”
 
-## Description
-
-Our variant works very similarly to standard Minesweeper, but with multiple players simultaneously playing on a single board. In both versions, players lose when they try to dig an untouched square that happens to contain a bomb. Whereas a standard Minesweeper game would end at this point, in our version, the game keeps going for the other players. In our version, when one player blows up a bomb, they still lose, and the game ends for them (the server ends their connection), but the other players may continue playing. The square where the bomb was blown up is now a dug square with no bomb. The player who lost may reconnect to the same game again via telnet to start playing again.
+This is a client-server multiplayer variant of the classic computer game “Minesweeper”.
 
 ## Getting Started
 
@@ -34,14 +31,23 @@ Firstly, run the server
   * "Host Name (or IP address)" - "localhost"
   * "Port" - 4444
   * "Connection type" - "Telnet"
+  * "Close window on exit" - "Never"
   
  Push "Open" button and follow the intstuction. Enjoy your game!
+ 
+## Rules
+
+ * You can review the [rules of traditional single-player Minesweeper on Wikipedia](https://en.wikipedia.org/wiki/Minesweeper_(video_game)).
+ * You can also [play traditional single-player Minesweeper online](http://minesweeperonline.com/).
+ 
+This variant works very similarly to standard Minesweeper, but with multiple players simultaneously playing on a single board. In both versions, players lose when they try to dig an untouched square that happens to contain a bomb. Whereas a standard Minesweeper game would end at this point, in this version, the game keeps going for the other players. In this version, when one player blows up a bomb, they still lose, and the game ends for them (the server ends their connection), but the other players may continue playing. The square where the bomb was blown up is now a dug square with no bomb. The player who lost may reconnect to the same game again via telnet to start playing again.
+
+Please see the protocol of client-server communication
+ * [Protocol](https://github.com/olya-chuchuk/minesweeper/blob/master/protocol.md)
 
 ## Documentation
 
+  * [Initializing the Board](https://github.com/olya-chuchuk/minesweeper/blob/master/initialize_board.md)
   * [Documentation](http://htmlpreview.github.io/?https://github.com/olya-chuchuk/minesweeper/blob/master/docs/index.html)
-  * [Guide](https://github.com/olya-chuchuk/minesweeper/blob/master/guide.md)
- 
- For the closer look on how the program works, please, check out the description
- 
-  * [Description of the Game](https://github.com/olya-chuchuk/minesweeper/blob/master/description.md)
+  
+## Testing
