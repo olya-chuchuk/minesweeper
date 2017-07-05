@@ -39,4 +39,8 @@ Firstly, run the server
 
 ## Documentation
 
-http://htmlpreview.github.io/?https://github.com/olya-chuchuk/minesweeper/blob/master/docs/index.html
+  * [Documentation](http://htmlpreview.github.io/?https://github.com/olya-chuchuk/minesweeper/blob/master/docs/index.html)
+ 
+ For the closer look on how the program works, please, check out the description
+ 
+  * [Description of the Game](https://github.com/olya-chuchuk/minesweeper/blob/master/description.md)
