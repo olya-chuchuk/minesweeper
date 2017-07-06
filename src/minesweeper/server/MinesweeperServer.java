@@ -80,7 +80,8 @@ public class MinesweeperServer {
     /**
      * Make a MinesweeperServer that listens for connections on port.
      * 
-     * @param port port number, requires 0 < port <= 65535
+     * @param board default board
+     * @param port port number, requires 0 &lt; port &lt;= 65535
      * @param debug debug mode flag
      * @throws IOException if an error occurs opening the server socket
      */
@@ -308,10 +309,10 @@ public class MinesweeperServer {
      * @param file If file.isPresent(), start with a board loaded from the specified file,
      *             according to the input file format defined in the documentation for main(..).
      * @param sizeX If (!file.isPresent()), start with a random board with width sizeX
-     *              (and require sizeX > 0).
+     *              (and require sizeX &gt; 0).
      * @param sizeY If (!file.isPresent()), start with a random board with height sizeY
-     *              (and require sizeY > 0).
-     * @param port The network port on which the server should listen, requires 0 <= port <= 65535.
+     *              (and require sizeY &gt; 0).
+     * @param port The network port on which the server should listen, requires 0 &lt;= port &lt;= 65535.
      * @throws IOException if a network error occurs
      */
     public static void runMinesweeperServer(boolean debug, Optional<File> file, int sizeX, int sizeY, int port) throws IOException {
@@ -322,22 +323,7 @@ public class MinesweeperServer {
                 board = new Board(sizeX, sizeY);
             }        
         MinesweeperServer server = new MinesweeperServer(board, port, debug);
-        try {            
-            server.serve();
-        } finally {
-            if(server != null) {
-               // server.close();
-            }
-        }
+        server.serve();
     }
-    
-//    /**
-//     * Method closes current server socket
-//     * should be called at the end of using minesweeperServer
-//     * @throws IOException 
-//     */
-//    public void close() throws IOException {
-//        serverSocket.close();
-//        System.out.println("Closed port" + serverSocket.getLocalPort());
-//    }
+   
 }

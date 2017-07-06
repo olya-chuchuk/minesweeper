@@ -30,17 +30,19 @@ public class MinesweeperServerTest {
       *      debug, no debug
       * board
       *      from file, random
-      *      x = 1, x = 2,3, x >= 4
-      *      y = 1, y = 2,3, y >= 4
+      *      x = 1, x = 2,3, x &gt;= 4
+      *      y = 1, y = 2,3, y &gt;= 4
       * port
-      *      no port, port < 0, port = 0, 0 < port < 65535, port = 65535, port > 65535
+      *      no port, port &lt; 0, port = 0, 0 &lt; port &lt; 65535, port = 65535, port &gt; 65535
       * clients
-      *      1 client, > 1, many clients
+      *      1 client, &gt; 1, many clients
       *      
       * Cover-each-part
       */
     
-    //Test MinesweeperServer listening on port
+    /**
+     * Test MinesweeperServer listening on port
+     */
     @Test
     public void testMinesweeperServerPort() {
         try {
@@ -54,7 +56,9 @@ public class MinesweeperServerTest {
         }
     }  
 
-    //Test MinesweeperServer port=65535
+    /**
+     * Test MinesweeperServer port=65535
+     */
     @Test
     public void testMinesweeperServer65535Port() {
         try {

@@ -73,8 +73,8 @@ public class Board {
     }
     
     /**
-     * Constructs the same board as in the file, specified by the following grammar
-     * * <pre>
+     * Constructs the same board as in the file, specified by the following grammar.
+     * <pre>
      *   FILE ::= BOARD LINE+
      *   BOARD ::= X SPACE Y NEWLINE
      *   LINE ::= (VAL SPACE)* VAL NEWLINE
@@ -85,6 +85,7 @@ public class Board {
      *   NEWLINE ::= "\n" | "\r" "\n"?
      *   INT ::= [0-9]+
      * </pre>
+     * 
      * @param file file where board stores
      * @throws FileNotFoundException if file was not found
      */
@@ -111,9 +112,10 @@ public class Board {
     }
     
     /**
-     * Constructs a new random board with x columns and y rows
-     * @param x number of columns, x > 0
-     * @param y number of rows, y > 0
+     * Constructs a new random board with x columns and y rows.
+     * 
+     * @param x number of columns, x &gt; 0
+     * @param y number of rows, y &gt; 0
      */
     public Board(int x, int y) {
         if(x <= 0 || y <= 0 ){
@@ -134,7 +136,7 @@ public class Board {
     //Observers
     
     /**
-     * returns number of columns on the board
+     * @return number of columns on the board
      */
     public synchronized int columnsNumber() {
         return columns;
@@ -142,16 +144,17 @@ public class Board {
     
 
     /**
-     * returns number of rows on the board
+     * @return number of rows on the board
      */
     public synchronized int rowsNumber() {
         return rows;
     }
     
     /**
-     * Observe whether cell (x,y) is touched (not flagged and not dug)
-     * @param x 0 <= x < columnsNumber
-     * @param y 0 <= y < rowsNumber
+     * Observe whether cell (x,y) is touched (not flagged and not dug).
+     * 
+     * @param x 0 &lt;= x &lt; columnsNumber
+     * @param y 0 &lt;= y &lt; rowsNumber
      * @return true if and only if cell (x,y) is untouched
      */
     public synchronized boolean isUntouched(int x, int y) {
@@ -163,9 +166,10 @@ public class Board {
     }
 
     /**
-     * Observe whether cell (x,y) is flagged
-     * @param x 0 <= x < columnsNumber
-     * @param y 0 <= y < rowsNumber
+     * Observe whether cell (x,y) is flagged.
+     * 
+     * @param x 0 &lt;= x &lt; columnsNumber
+     * @param y 0 &lt;= y &lt; rowsNumber
      * @return true if and only if cell (x,y) is flagged
      */
     public synchronized boolean isFlagged(int x, int y) {
@@ -177,9 +181,10 @@ public class Board {
     }
 
     /**
-     * Observe whether cell (x,y) is dug
-     * @param x 0 <= x < columnsNumber
-     * @param y 0 <= y < rowsNumber
+     * Observe whether cell (x,y) is dug.
+     * 
+     * @param x 0 &lt;= x &lt; columnsNumber
+     * @param y 0 &lt;= y &lt; rowsNumber
      * @return true if and only if cell (x,y) is dug
      */
     public synchronized boolean isDug(int x, int y) {
@@ -191,9 +196,10 @@ public class Board {
     }  
 
     /**
-     * Finds number of adjacent bombs to dug empty cell (x,y)
-     * @param x 0 <= x < columnsNumber
-     * @param y 0 <= y < rowsNumber
+     * Finds number of adjacent bombs to dug empty cell (x,y).
+     * 
+     * @param x 0 &lt;= x &lt; columnsNumber
+     * @param y 0 &lt;= y &lt; rowsNumber
      * @return number of adjacent bombs to cell (x,y)
      * @throws UnsupportedOperationException if cell (x,y) is not dug or contains a bomb
      */
@@ -212,13 +218,14 @@ public class Board {
     private final int Y_NEIGHBORS[] = {-1, 0, 1, -1, 1, -1, 0, 1};
     
     /**
-     * Digs cell (x,y) if it is untouched,
-     * updates the number of neighbor bombs of this cell, 
-     * if cell contains a bomb, makes this cell empty and updates dug empty neighbor cells
-     * digs its neighbors if neighbor bombs number is zero
-     * if was touched - does nothing
-     * @param x 0 <= x < columnsNumber
-     * @param y 0 <= y < rowsNumber
+     * Digs cell (x,y) if it is untouched.
+     * Updates the number of neighbor bombs of this cell, 
+     * if cell contains a bomb, makes this cell empty and updates dug empty neighbor cells 
+     * digs its neighbors if neighbor bombs number is zero, 
+     * if was touched - does nothing.
+     * 
+     * @param x 0 &lt;= x &lt; columnsNumber
+     * @param y 0 &lt;= y &lt; rowsNumber
      * @return true if and only if cell was dug and contained a bomb
      */
     public synchronized boolean digIfUntouched(int x, int y){
@@ -263,9 +270,10 @@ public class Board {
     }
     
     /**
-     * digs an empty cell whether it untouched or flagged
-     * updates the number of neighbor bombs of this cell, 
-     * digs its neighbors if neighbor bombs number is zero
+     * Digs an empty cell whether it untouched or flagged.
+     * Updates the number of neighbor bombs of this cell, 
+     * digs its neighbors if neighbor bombs number is zero.
+     * 
      * @param x 0 <= x < columnsNumber
      * @param y 0 <= y < rowsNumber
      * @throws UnsupportedOperationException if cell is not empty
@@ -294,8 +302,9 @@ public class Board {
     }
 
     /**
-     * counts number of adjacent bombs of cell (x, y) on the board
-     * and renew that number on cell(x,y)
+     * Counts number of adjacent bombs of cell (x, y) on the board
+     * and renew that number on cell(x,y).
+     * 
      * @param x column, 0 <= x < columns
      * @param y row, 0 <= y < rows
      * @throws UnsupportedOperationException if cell is not dug or contains a bomb
@@ -323,8 +332,9 @@ public class Board {
     
     /**
      * Flags cell (x,y) if it was untouched
-     * @param x 0 <= x < columnsNumber
-     * @param y 0 <= y < rowsNumber
+     * 
+     * @param x 0 &lt;= x &lt; columnsNumber
+     * @param y 0 &lt;= y &lt; rowsNumber
      */
     public synchronized void flagIfUntouched(int x, int y){
         if(x < 0 || x >= columns ||
@@ -336,9 +346,10 @@ public class Board {
     }
     
     /**
-     * Deflags cell (x,y) if it was flagged
-     * @param x 0 <= x < columnsNumber
-     * @param y 0 <= y < rowsNumber
+     * Deflags cell (x,y) if it was flagged.
+     * 
+     * @param x 0 &lt;= x &lt; columnsNumber
+     * @param y 0 &lt;= y &lt; rowsNumber
      */
     public synchronized void deflagIfFlagged(int x, int y){
         if(x < 0 || x >= columns ||
@@ -382,15 +393,17 @@ public class Board {
     }
     
     /**
-     * Returns a string representation of a board
+     * Returns a string representation of a board.
      * X direction is horizontal, Y is vertical
      * each row starts from new line (separated by "\n" character)
      * within a line cells are separated by space character
      * each cell is represented by one character
+     * <pre>
      * "-" if untouched
      * "F" if flagged
      * " " if dug and neighbor cells do not contain bombs
      * 1-8 number of neighbor bombs otherwise
+     * </pre>
      */
     @Override
     public String toString() {
@@ -445,7 +458,8 @@ class Cell {
     }
     
     /**
-     * Constructs an untouched cell
+     * Constructs an untouched cell.
+     * 
      * @param bomb is true if cell must contain a bomb
      */
     Cell(boolean bomb) {
@@ -480,7 +494,7 @@ class Cell {
     }
     
     /**
-     * sets a flag if cell is untouched
+     * Sets a flag if cell is untouched.
      */
     void flagIfUntouched() {
         if(state == State.UNTOUCHED) {
@@ -490,7 +504,7 @@ class Cell {
     }
     
     /**
-     * deflags a cell if it was flagged and makes it untouched
+     * Deflags a cell if it was flagged and makes it untouched.
      */
     void deflagIfFlagged() {
         if(state == State.FLAGGED) {
@@ -500,7 +514,7 @@ class Cell {
     }
     
     /**
-     * digs a cell if it was untouched and removes a bomb
+     * Digs a cell if it was untouched and removes a bomb.
      */
     void digIfUntouched() {
         if(state == State.UNTOUCHED) {
@@ -511,7 +525,8 @@ class Cell {
     }
     
     /**
-     * digs this empty cell
+     * Digs this empty cell.
+     * 
      * @throws UnsupportedOperationException if cell was not empty
      */
     void digEmpty() {
@@ -523,7 +538,7 @@ class Cell {
     }
     
     /**
-     * removes bomb from the cell
+     * Removes bomb from the cell.
      */
     void removeBomb() {
         containsBomb = false;
@@ -531,7 +546,7 @@ class Cell {
     }
     
     /**
-     * sets neighborBombs to the specified value
+     * Sets neighborBombs to the specified value.
      * @param bombs
      */
     void setNeighborBombs(int bombs) {
@@ -562,11 +577,13 @@ class Cell {
     }
     
     /**
-     * Returns a string representation of a cell
+     * Returns a string representation of a cell.
+     * <pre>
      * "-" if untouched
      * "F" if flagged
      * " " if dug and neighbor cells do not contain bombs
      * 1-8 number of neighbor bombs otherwise
+     * </pre>
      */
     @Override
     public String toString() {

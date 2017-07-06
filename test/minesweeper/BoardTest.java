@@ -29,6 +29,9 @@ public class BoardTest {
      * Equals, hashCode, toString
      */
     
+    /**
+     * Check assertion
+     */
     @Test(expected=AssertionError.class)
     public void testAssertionsEnabled() {
         assert false; // make sure assertions are enabled with VM argument: -ea
@@ -66,14 +69,20 @@ public class BoardTest {
         assertEquals("Cell neighbors after boom", 1, board.neighborBombs(1, 2));
     }
     
-    //Testing empty board
+    /**
+     * Testing empty board
+     * 
+     * @throws FileNotFoundException
+     */
     @Test
     public void testEmtpy() throws FileNotFoundException {
         Board board = new Board(new File("test\\boards\\emptyBoard_3_3"));
         assertEquals("empty board", board.toString(), "- - -\r\n- - -\r\n- - -");
     }
     
-    //Testing board with specified size
+    /**
+     * Testing board with specified size
+     */
     @Test
     public void testSpecifiedSize() {
         Board board = new Board(3,5);
@@ -85,7 +94,11 @@ public class BoardTest {
         } catch (IllegalArgumentException e) {}
     }
     
-    //Testing objects overriden methods
+    /**
+     * Testing objects overridden methods
+     * 
+     * @throws FileNotFoundException
+     */
     @Test
     public void testObjectMethods() throws FileNotFoundException {
         Board board1 = new Board(new File("test\\boards\\board_5_4.txt"));
