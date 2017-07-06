@@ -56,3 +56,7 @@ java minesweeper.server.MinesweeperServer --size 123,234
 java minesweeper.server.MinesweeperServer --file ../testBoard
 java minesweeper.server.MinesweeperServer --debug --port 1234 --size 20,14
 ```
+
+In the boards folder we provided you with some examples of board files. You can use them like this:
+
+```java minesweeper.server.MinesweeperServer --file ../boards/board_file_1```

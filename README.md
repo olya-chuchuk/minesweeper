@@ -50,4 +50,3 @@ Please see the protocol of client-server communication
   * [Initializing the Board](https://github.com/olya-chuchuk/minesweeper/blob/master/initialize_board.md)
   * [Documentation](http://htmlpreview.github.io/?https://github.com/olya-chuchuk/minesweeper/blob/master/docs/index.html)
   
-## Testing
